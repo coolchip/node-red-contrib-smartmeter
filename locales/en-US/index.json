@@ -1,0 +1,55 @@
+{
+    "smartmeter": {
+        "label": {
+            "protocol": "Protocol",
+            "transport": "Transport",
+            "requestInterval": "Request intervall"
+        },
+        "placeholder": {
+            "requestInterval": "0"
+        },
+        "protocol": {
+            "smlprotocol": "SmlProtocol",
+            "d0protocol": "D0Protocol",
+            "jsonerfprotocol": "JsonEfrProtocol"
+        },
+        "transport": {
+            "serialresponsetransport": "SerialResponseTransport",
+            "serialrequesttransport": "SerialRequestResponseTransport",
+            "httprequesttransport": "HttpRequestTransport",
+            "localfiletransport": "LocalFileTransport"
+        },
+        "hint": {
+            "ignoreParameters": "Ignore \"Input\" and \"Output\" parameters in serial port config. These are not used."
+        }
+    },
+    "serial": {
+        "label": {
+            "serialport": "Serial Port",
+            "settings": "Settings",
+            "baudrate": "Baud Rate",
+            "databits": "Data Bits",
+            "parity": "Parity",
+            "stopbits": "Stop Bits"
+        },
+        "placeholder": {
+            "serialport": "for example: /dev/ttyUSB0/"
+        },
+        "parity": {
+            "none": "None",
+            "even": "Even",
+            "mark": "Mark",
+            "odd": "Odd",
+            "space": "Space"
+        },
+        "onopen": "serial port __port__ opened at __baud__ baud __config__",
+        "errors": {
+            "missing-conf": "missing serial config",
+            "serial-port": "serial port",
+            "error": "serial port __port__ error: __error__",
+            "unexpected-close": "serial port __port__ closed unexpectedly",
+            "disconnected": "serial port __port__ disconnected",
+            "closed": "serial port __port__ closed"
+        }
+    }
+}
