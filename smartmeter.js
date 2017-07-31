@@ -1,21 +1,21 @@
 module.exports = function (RED) {
 	'use strict';
-	var SmartmeterObis = require('smartmeter-obis');
+	var smartmeterObis = require('smartmeter-obis');
 
 	function SmartmeterNode(config) {
 		RED.nodes.createNode(this, config);
 		var node = this;
 
-		node.serialConfig = RED.nodes.getNode(config.serial);
-		if (node.serialConfig) {
+		node.smartmeterConnection = RED.nodes.getNode(config.connection);
+		if (node.smartmeterConnection) {
 			var options = {
 				'protocol': config.protocol,
 				'transport': config.transport,
-				'transportSerialPort': node.serialConfig.serialport,
-				'transportSerialBaudrate': node.serialConfig.serialbaud,
-				'transportSerialDataBits': node.serialConfig.databits,
-				'transportSerialStopBits': node.serialConfig.stopbits,
-				'transportSerialParity': node.serialConfig.parity,
+				'transportSerialPort': node.smartmeterConnection.serialport,
+				'transportSerialBaudrate': node.smartmeterConnection.serialbaud,
+				'transportSerialDataBits': node.smartmeterConnection.databits,
+				'transportSerialStopBits': node.smartmeterConnection.stopbits,
+				'transportSerialParity': node.smartmeterConnection.parity,
 				'requestInterval': config.requestInterval,
 				'obisNameLanguage': 'de',
 				'obisFallbackMedium': 6
@@ -28,7 +28,7 @@ module.exports = function (RED) {
 				node.send(msg);
 			}
 
-			var smTransport = SmartmeterObis.init(options, sendData);
+			var smTransport = smartmeterObis.init(options, sendData);
 			smTransport.process();
 
 			node.on('close', function () {

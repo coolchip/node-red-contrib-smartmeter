@@ -1,0 +1,25 @@
+{
+    "smartmeter-connection": {
+        "label": {
+            "serialport": "Serial Port",
+            "settings": "Settings",
+            "baudrate": "Baud Rate",
+            "databits": "Data Bits",
+            "parity": "Parity",
+            "stopbits": "Stop Bits",
+            "serial": "serial",
+            "none": "none"
+        },
+        "placeholder": {
+            "serialport": "for example: /dev/ttyUSB0/"
+        },
+        "parity": {
+            "none": "None",
+            "even": "Even",
+            "mark": "Mark",
+            "odd": "Odd",
+            "space": "Space"
+        },
+        "onopen": "serial port __port__ opened at __baud__ baud __config__"
+    }
+}

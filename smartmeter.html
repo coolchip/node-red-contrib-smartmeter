@@ -3,12 +3,10 @@
 </script>
 
 <script type="text/x-red" data-template-name="smartmeter">
-    <div class="form-row node-input-serial">
-        <label for="node-input-serial"><i class="fa fa-random"></i> <span data-i18n="serial.label.serialport"></span></label>
-        <input type="text" id="node-input-serial">
+    <div class="form-row">
+        <label for="node-input-connection"><i class="fa fa-random"></i> <span data-i18n="smartmeter.label.connection"></span></label>
+        <input type="text" id="node-input-connection">
     </div>
-    <div class="form-tips"> <span data-i18n="smartmeter.hint.ignoreParameters"></span></div>
-    <div class="form-row"></div>
     <div class="form-row">
         <label for="node-input-protocol"><i class="fa fa-file-text-o"></i> <span data-i18n="smartmeter.label.protocol"></span></label>
         <select id="node-input-protocol">
@@ -44,8 +42,8 @@
             name: {
                 name: ""
             },
-            serial: {
-                type: "serial-port",
+            connection: {
+                type: "smartmeter-connection",
                 required: true
             },
             protocol: {
