@@ -4,8 +4,8 @@
 
 <script type="text/x-red" data-template-name="smartmeter">
     <div class="form-row">
-        <label for="node-input-connection"><i class="fa fa-random"></i> <span data-i18n="smartmeter.label.connection"></span></label>
-        <input type="text" id="node-input-connection">
+        <label for="node-input-datasource"><i class="fa fa-random"></i> <span data-i18n="smartmeter.label.datasource"></span></label>
+        <input type="text" id="node-input-datasource">
     </div>
     <div class="form-row">
         <label for="node-input-protocol"><i class="fa fa-file-text-o"></i> <span data-i18n="smartmeter.label.protocol"></span></label>
@@ -20,8 +20,8 @@
         <select id="node-input-transport">
             <option value="SerialResponseTransport" data-i18n="smartmeter.transport.serialresponsetransport"></option>
             <option value="SerialRequestResponseTransport" data-i18n="smartmeter.transport.serialrequesttransport"></option>
-            <!--<option value="HttpRequestTransport" data-i18n="smartmeter.transport.httprequesttransport"></option>
-            <option value="LocalFileTransport" data-i18n="smartmeter.transport.localfiletransport"></option>-->
+            <option value="HttpRequestTransport" data-i18n="smartmeter.transport.httprequesttransport"></option>
+            <option value="LocalFileTransport" data-i18n="smartmeter.transport.localfiletransport"></option>
         </select>
     </div>
     <div class="form-row">
@@ -42,7 +42,7 @@
             name: {
                 name: ""
             },
-            connection: {
+            datasource: {
                 type: "smartmeter-connection",
                 required: true
             },

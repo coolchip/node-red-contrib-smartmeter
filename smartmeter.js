@@ -6,17 +6,19 @@ module.exports = function (RED) {
 		RED.nodes.createNode(this, config);
 		var node = this;
 
-		node.smartmeterConnection = RED.nodes.getNode(config.connection);
-		if (node.smartmeterConnection) {
+		node.smartmeterDatasource = RED.nodes.getNode(config.datasource);
+		if (node.smartmeterDatasource) {
 			var options = {
 				'protocol': config.protocol,
 				'transport': config.transport,
-				'transportSerialPort': node.smartmeterConnection.serialport,
-				'transportSerialBaudrate': node.smartmeterConnection.serialbaud,
-				'transportSerialDataBits': node.smartmeterConnection.databits,
-				'transportSerialStopBits': node.smartmeterConnection.stopbits,
-				'transportSerialParity': node.smartmeterConnection.parity,
+				'transportSerialPort': node.smartmeterDatasource.serialport,
+				'transportSerialBaudrate': node.smartmeterDatasource.serialbaud,
+				'transportSerialDataBits': node.smartmeterDatasource.databits,
+				'transportSerialStopBits': node.smartmeterDatasource.stopbits,
+				'transportSerialParity': node.smartmeterDatasource.parity,
 				'requestInterval': config.requestInterval,
+				'transportHttpRequestUrl': `${node.smartmeterDatasource.hostname}:${node.smartmeterDatasource.hostport}`,
+				'transportLocalFilePath': node.smartmeterDatasource.filepath,
 				'obisNameLanguage': 'de',
 				'obisFallbackMedium': 6
 			};

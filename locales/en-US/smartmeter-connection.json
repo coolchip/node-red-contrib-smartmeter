@@ -1,17 +1,25 @@
 {
     "smartmeter-connection": {
         "label": {
-            "serialport": "Serial Port",
+            "sourcetype": "Source type",
+            "serialport": "Serial port",
             "settings": "Settings",
-            "baudrate": "Baud Rate",
-            "databits": "Data Bits",
+            "baudrate": "Baud rate",
+            "databits": "Data bits",
             "parity": "Parity",
-            "stopbits": "Stop Bits",
-            "serial": "serial",
-            "none": "none"
+            "stopbits": "Stop bits",
+            "host": "Host",
+            "port": "Port",
+            "filepath": "Filename"
         },
         "placeholder": {
-            "serialport": "for example: /dev/ttyUSB0/"
+            "serialport": "for example: /dev/ttyUSB0/",
+            "filepath": "for example: /tmp/data.json"
+        },
+        "sourcetype": {
+            "serial": "Serial",
+            "http": "HTTP",
+            "file": "File"
         },
         "parity": {
             "none": "None",
@@ -19,7 +27,6 @@
             "mark": "Mark",
             "odd": "Odd",
             "space": "Space"
-        },
-        "onopen": "serial port __port__ opened at __baud__ baud __config__"
+        }
     }
 }

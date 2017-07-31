@@ -8,6 +8,9 @@ module.exports = function (RED) {
         this.databits = parseInt(n.databits) || 8;
         this.parity = n.parity || 'none';
         this.stopbits = parseInt(n.stopbits) || 1;
+        this.hostname = n.hostname || 'localhost';
+        this.hostport = n.hostport || 80;
+        this.filepath = n.filepath || '';
     }
     RED.nodes.registerType('smartmeter-connection', SmartmeterConnectionNode);
 
