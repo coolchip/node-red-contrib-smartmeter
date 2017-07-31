@@ -2,10 +2,7 @@
   "name": "node-red-contrib-smartmeter",
   "version": "0.0.1",
   "description": "Node, that reads and parses values from smartmeter devices",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
-  },
+  "main": "smartmeter.js",
   "dependencies": {
     "smartmeter-obis": "^0.5.11",
     "node-red-node-serialport": "^0.4.4"
@@ -19,7 +16,7 @@
   ],
   "node-red": {
     "nodes": {
-      "smartmeter": "index.js"
+      "smartmeter": "smartmeter.js"
     }
   },
   "author": "Sebastian B.",
