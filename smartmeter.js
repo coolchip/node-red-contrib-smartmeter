@@ -23,7 +23,10 @@ module.exports = function (RED) {
 				'obisFallbackMedium': 6
 			};
 
-			function sendData(obisResult) {
+			function sendData(err, obisResult) {
+				if (err) {
+					return RED.log.error(`smartmeter-obis error: ${err}`);
+				}
 				const msg = {
 					payload: obisResult
 				};
