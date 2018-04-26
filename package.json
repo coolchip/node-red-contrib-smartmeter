@@ -4,8 +4,8 @@
   "description": "Node, that reads and parses values from smartmeter devices",
   "main": "smartmeter.js",
   "dependencies": {
-    "serialport": "^6.0.4",
-    "smartmeter-obis": "^1.1.0-alpha2"
+    "serialport": "^6.2.0",
+    "smartmeter-obis": "^1.1.2"
   },
   "keywords": [
     "node-red",
