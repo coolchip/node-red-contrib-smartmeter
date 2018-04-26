@@ -1,7 +1,7 @@
 ## node-red-contrib-smartmeter
 [![npm version](https://badge.fury.io/js/node-red-contrib-smartmeter.svg)](https://badge.fury.io/js/node-red-contrib-smartmeter)
 [![Dependency Status](https://david-dm.org/coolchip/node-red-contrib-smartmeter.svg)](https://david-dm.org/coolchip/node-red-contrib-smartmeter)
-[![licence](https://img.shields.io/npm/l/express.svg)](https://www.npmjs.com/package/node-red-contrib-smartmeter)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/coolchip/node-red-contrib-smartmeter)
 
 #### Node-RED Node, that reads hnd parses the data from smartmeter devices. Supports for example Hager eHz Energy Meter, EMH Energy Meter, EFR SmartGridHub, Siemens 2WR5, Elster AS1440, Iskraemeco MT174, Itron EM214 Typ 720.
 
