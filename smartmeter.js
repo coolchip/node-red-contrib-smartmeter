@@ -17,6 +17,7 @@ module.exports = function (RED) {
 				'transportSerialStopBits': node.smartmeterDatasource.stopbits,
 				'transportSerialParity': node.smartmeterDatasource.parity,
 				'requestInterval': config.requestInterval,
+				'protocolD0WakeupCharacters': config.d0WakeupCharacter,
 				'transportHttpRequestUrl': `${node.smartmeterDatasource.hostname}:${node.smartmeterDatasource.hostport}`,
 				'transportLocalFilePath': node.smartmeterDatasource.filepath,
 				'obisNameLanguage': 'de',
