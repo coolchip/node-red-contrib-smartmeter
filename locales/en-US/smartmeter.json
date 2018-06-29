@@ -4,7 +4,8 @@
             "datasource": "Data source",
             "protocol": "Protocol",
             "transport": "Transport",
-            "requestInterval": "Request intervall"
+            "requestInterval": "Request intervall",
+            "d0WakeupCharacter": "Wake Up Character (D0)"
         },
         "placeholder": {
             "requestInterval": "0"
