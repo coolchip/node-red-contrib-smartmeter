@@ -20,6 +20,8 @@ module.exports = function (RED) {
 				'protocolD0WakeupCharacters': config.d0WakeupCharacter,
 				'transportHttpRequestUrl': `${node.smartmeterDatasource.hostname}:${node.smartmeterDatasource.hostport}`,
 				'transportLocalFilePath': node.smartmeterDatasource.filepath,
+				'transportTcpHost': node.smartmeterDatasource.tcphost,
+				'transportTcpPort': node.smartmeterDatasource.tcpport,
 				'obisNameLanguage': 'de',
 				'obisFallbackMedium': 6
 			};
