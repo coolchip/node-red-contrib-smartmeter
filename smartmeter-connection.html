@@ -4,6 +4,7 @@
         <select type="text" id="node-config-input-sourcetype">
             <option value="serial" data-i18n="smartmeter-connection.sourcetype.serial"></option>
             <option value="http" data-i18n="smartmeter-connection.sourcetype.http"></option>
+            <option value="tcp" data-i18n="smartmeter-connection.sourcetype.tcp"></option>
             <option value="file" data-i18n="smartmeter-connection.sourcetype.file"></option>
         </select>
     </div>
@@ -69,6 +70,17 @@
         </div>
     </div>
 
+    <div id="node-inputs-smartmeter-tcp">
+        <div class="form-row">
+            <label for="node-config-input-tcphost"><i class="fa fa-globe"></i> <span data-i18n="smartmeter-connection.label.host"></span></label>
+            <input type="text" id="node-config-input-tcphost">
+        </div>
+        <div class="form-row">
+            <label for="node-config-input-tcpport"><i class="fa fa-random"></i> <span data-i18n="smartmeter-connection.label.port"></span></label>
+            <input type="text" id="node-config-input-tcpport">
+        </div>
+    </div>
+
     <div id="node-inputs-smartmeter-file">
         <div class="form-row">
             <label for="node-config-input-filepath"><i class="fa fa-file"></i> <span data-i18n="smartmeter-connection.label.filepath"></span></label>
@@ -115,6 +127,15 @@
                 required: true,
                 validate: RED.validators.number()
             },
+            tcphost: {
+                value: '',
+                required: true
+            },
+            tcpport: {
+                value: '',
+                required: true,
+                validate: RED.validators.number()
+            },
             filepath: {
                 value: '',
                 required: true
@@ -130,6 +151,8 @@
                     .toUpperCase() + this.stopbits;
             } else if (this.sourcetype === 'http') {
                 return 'http@' + this.httphost + ':' + this.httpport;
+            } else if (this.sourcetype === 'tcp') {
+                return 'tcp@' + this.tcphost + ':' + this.tcpport;
             } else {
                 return 'file@' + this.filepath;
             }
@@ -231,14 +254,22 @@
                 if ($(this).val() === 'serial') {
                     $("#node-inputs-smartmeter-serial").show();
                     $("#node-inputs-smartmeter-http").hide();
+                    $("#node-inputs-smartmeter-tcp").hide();
                     $("#node-inputs-smartmeter-file").hide();
                 } else if ($(this).val() === 'http') {
                     $("#node-inputs-smartmeter-serial").hide();
                     $("#node-inputs-smartmeter-http").show();
+                    $("#node-inputs-smartmeter-tcp").hide();
+                    $("#node-inputs-smartmeter-file").hide();
+                } else if ($(this).val() === 'tcp') {
+                    $("#node-inputs-smartmeter-serial").hide();
+                    $("#node-inputs-smartmeter-http").hide();
+                    $("#node-inputs-smartmeter-tcp").show();
                     $("#node-inputs-smartmeter-file").hide();
                 } else {
                     $("#node-inputs-smartmeter-serial").hide();
                     $("#node-inputs-smartmeter-http").hide();
+                    $("#node-inputs-smartmeter-tcp").hide();
                     $("#node-inputs-smartmeter-file").show();
                 }
             });
@@ -253,14 +284,25 @@
             if ($('#node-config-input-sourcetype').val() === "serial") {
                 $('#node-config-input-httphost').val('localhost');
                 $('#node-config-input-httpport').val('80');
+                $('#node-config-input-tcphost').val('localhost');
+                $('#node-config-input-tcpport').val('502');
                 $('#node-config-input-filepath').val('/dev/null');
             } else if ($('#node-config-input-sourcetype').val() === "http") {
                 $('#node-config-input-serialport').val('/dev/null');
+                $('#node-config-input-tcphost').val('localhost');
+                $('#node-config-input-tcpport').val('502');
+                $('#node-config-input-filepath').val('/dev/null');
+            } else if ($('#node-config-input-sourcetype').val() === "tcp") {
+                $('#node-config-input-serialport').val('/dev/null');
+                $('#node-config-input-httphost').val('localhost');
+                $('#node-config-input-httpport').val('80');
                 $('#node-config-input-filepath').val('/dev/null');
             } else {
                 $('#node-config-input-serialport').val('/dev/null');
                 $('#node-config-input-httphost').val('localhost');
                 $('#node-config-input-httpport').val('80');
+                $('#node-config-input-tcphost').val('localhost');
+                $('#node-config-input-tcpport').val('502');
             }
         }
     });

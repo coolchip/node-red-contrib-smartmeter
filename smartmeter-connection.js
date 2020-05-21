@@ -11,6 +11,8 @@ module.exports = function (RED) {
         this.hostname = n.hostname || 'localhost';
         this.hostport = n.hostport || 80;
         this.filepath = n.filepath || '';
+        this.tcphost = n.tcphost || 'localhost';
+        this.tcpport = n.tcpport || 502;
     }
     RED.nodes.registerType('smartmeter-connection', SmartmeterConnectionNode);
 

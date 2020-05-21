@@ -19,7 +19,8 @@
             "serialresponsetransport": "SerialResponseTransport",
             "serialrequesttransport": "SerialRequestResponseTransport",
             "httprequesttransport": "HttpRequestTransport",
-            "localfiletransport": "LocalFileTransport"
+            "localfiletransport": "LocalFileTransport",
+            "tcptransport": "Read data from a tcp socket"
         }
     }
 }
