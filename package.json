@@ -5,7 +5,7 @@
   "main": "smartmeter.js",
   "dependencies": {
     "serialport": "^8.0.5",
-    "smartmeter-obis": "^2.0.3"
+    "smartmeter-obis": "^2.1.2"
   },
   "keywords": [
     "node-red",
