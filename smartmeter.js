@@ -24,7 +24,7 @@ module.exports = function (RED) {
 				'transportTcpHost': node.smartmeterDatasource.tcphost,
 				'transportTcpPort': node.smartmeterDatasource.tcpport,
 				'obisNameLanguage': 'de',
-				'obisFallbackMedium': 6,
+				'obisFallbackMedium': 6
 			};
 
 			function sendData(err, obisResult) {
