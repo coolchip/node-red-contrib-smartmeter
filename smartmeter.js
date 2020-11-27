@@ -17,13 +17,14 @@ module.exports = function (RED) {
 				'transportSerialStopBits': node.smartmeterDatasource.stopbits,
 				'transportSerialParity': node.smartmeterDatasource.parity,
 				'requestInterval': config.requestInterval,
-				'protocolD0WakeupCharacters': config.d0WakeupCharacter,
+				'protocolD0WakeupCharacters': config.d0WakeupCharacters,
+                                'protocolD0SignOnMessage': config.d0SignOnMessage,
 				'transportHttpRequestUrl': `${node.smartmeterDatasource.hostname}:${node.smartmeterDatasource.hostport}`,
 				'transportLocalFilePath': node.smartmeterDatasource.filepath,
 				'transportTcpHost': node.smartmeterDatasource.tcphost,
 				'transportTcpPort': node.smartmeterDatasource.tcpport,
 				'obisNameLanguage': 'de',
-				'obisFallbackMedium': 6
+				'obisFallbackMedium': 6,
 			};
 
 			function sendData(err, obisResult) {
