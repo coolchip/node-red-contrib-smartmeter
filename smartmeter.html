@@ -37,6 +37,10 @@
         <label for="node-input-d0SignOnMessage"><i class="fa fa-bell"></i> <span data-i18n="smartmeter.label.d0SignOnMessage"></span></label>
         <input type="text" id="node-input-d0SignOnMessage">
     </div>
+    <div class="form-row">
+        <label for="node-input-d0BaudrateChangeoverOverwrite"><i class="fa fa-tachometer"></i> <span data-i18n="smartmeter.label.d0BaudrateChangeoverOverwrite"></span></label>
+        <input type="number" id="node-input-d0BaudrateChangeoverOverwrite">
+    </div>
 
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> <span data-i18n="node-red:common.label.name"></span></label>
@@ -73,6 +77,10 @@
                 required: false
             },
             d0SignOnMessage: {
+                value: "",
+                required: false
+            },
+            d0BaudrateChangeoverOverwrite: {
                 value: "",
                 required: false
             }

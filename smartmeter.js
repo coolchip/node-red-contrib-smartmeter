@@ -19,7 +19,7 @@ module.exports = function (RED) {
 				'requestInterval': config.requestInterval,
 				'protocolD0WakeupCharacters': config.d0WakeupCharacters,
 				'protocolD0SignOnMessage': config.d0SignOnMessage,
-				'protocolD0BaudrateChangeoverOverwrite': 0,
+				'protocolD0BaudrateChangeoverOverwrite': config.d0BaudrateChangeoverOverwrite,
 				'transportHttpRequestUrl': `${node.smartmeterDatasource.hostname}:${node.smartmeterDatasource.hostport}`,
 				'transportLocalFilePath': node.smartmeterDatasource.filepath,
 				'transportTcpHost': node.smartmeterDatasource.tcphost,
