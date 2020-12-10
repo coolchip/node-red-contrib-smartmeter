@@ -4,8 +4,10 @@
             "datasource": "Data source",
             "protocol": "Protocol",
             "transport": "Transport",
-            "requestInterval": "Request intervall",
-            "d0WakeupCharacter": "Wake Up Character (D0)"
+            "requestInterval": "Request interval",
+            "d0WakeupCharacters": "Wake Up Character (D0)",
+            "d0SignOnMessage": "SignIn-Message (D0)",
+            "d0BaudrateChangeoverOverwrite": "Force Baudrate (D0)"
         },
         "placeholder": {
             "requestInterval": "0"

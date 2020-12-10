@@ -30,9 +30,18 @@
         <input type="number" id="node-input-requestInterval" data-i18n="[placeholder]smartmeter.placeholder.requestInterval">
     </div>
     <div class="form-row">
-        <label for="node-input-d0WakeupCharacter"><i class="fa fa-bed"></i> <span data-i18n="smartmeter.label.d0WakeupCharacter"></span></label>
-        <input type="number" id="node-input-d0WakeupCharacter">
+        <label for="node-input-d0WakeupCharacters"><i class="fa fa-bed"></i> <span data-i18n="smartmeter.label.d0WakeupCharacters"></span></label>
+        <input type="number" id="node-input-d0WakeupCharacters">
     </div>
+    <div class="form-row">
+        <label for="node-input-d0SignOnMessage"><i class="fa fa-bell"></i> <span data-i18n="smartmeter.label.d0SignOnMessage"></span></label>
+        <input type="text" id="node-input-d0SignOnMessage">
+    </div>
+    <div class="form-row">
+        <label for="node-input-d0BaudrateChangeoverOverwrite"><i class="fa fa-tachometer"></i> <span data-i18n="smartmeter.label.d0BaudrateChangeoverOverwrite"></span></label>
+        <input type="number" id="node-input-d0BaudrateChangeoverOverwrite">
+    </div>
+
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> <span data-i18n="node-red:common.label.name"></span></label>
         <input type="text" id="node-input-name" data-i18n="[placeholder]node-red:common.label.name">
@@ -63,7 +72,15 @@
                 value: 0,
                 required: true
             },
-            d0WakeupCharacter: {
+            d0WakeupCharacters: {
+                value: "",
+                required: false
+            },
+            d0SignOnMessage: {
+                value: "",
+                required: false
+            },
+            d0BaudrateChangeoverOverwrite: {
                 value: "",
                 required: false
             }
