@@ -20,6 +20,7 @@ module.exports = function (RED) {
 				'protocolD0WakeupCharacters': config.d0WakeupCharacters,
 				'protocolD0SignOnMessage': config.d0SignOnMessage,
 				'protocolD0BaudrateChangeoverOverwrite': config.d0BaudrateChangeoverOverwrite,
+				'protocolSmlIgnoreInvalidCRC': config.protocolSmlIgnoreInvalidCRC,
 				'transportHttpRequestUrl': `${node.smartmeterDatasource.httphost}:${node.smartmeterDatasource.httpport}`,
 				'transportLocalFilePath': node.smartmeterDatasource.filepath,
 				'transportTcpHost': node.smartmeterDatasource.tcphost,
