@@ -8,7 +8,8 @@
             "d0WakeupCharacters": "Wake Up Character (D0)",
             "d0SignOnMessage": "SignIn-Message (D0)",
             "d0BaudrateChangeoverOverwrite": "Force Baudrate (D0)",
-            "protocolSmlIgnoreInvalidCRC": "Ignore invalid CRC (Sml)"
+            "protocolSmlIgnoreInvalidCRC": "Ignore invalid CRC (Sml)",
+            "debugging": "Debugging"
         },
         "placeholder": {
             "requestInterval": "0"
