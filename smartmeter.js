@@ -41,19 +41,23 @@ module.exports = function (RED) {
 				node.send(msg);
 			}
 
-			var smTransport = smartmeterObis.init(options, sendData);
-			smTransport.process();
+			var smTransport;
+			
+			if (config.requestInterval >= 0 ) {
+				smTransport = smartmeterObis.init(options, sendData);
+				smTransport.process();
+			}
 
 			node.on('close', function () {
 				smTransport.stop();
 			});
 			
-			node.on('input', function(msg) {
+			node.on('input', function() {
 				if (!smTransport.protocol.isProcessComplete()) {
                 			node.warn("Previous process hasn't finished yet");
                 			return;
             			}
-				if (config.requestInterval == -1 ) {
+				if (config.requestInterval < 0 ) {
 					smTransport = smartmeterObis.init(options, sendData);
 				}
 				smTransport.process();
