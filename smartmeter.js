@@ -47,6 +47,14 @@ module.exports = function (RED) {
 			node.on('close', function () {
 				smTransport.stop();
 			});
+			
+			node.on('input', function(msg) {
+				if (!smTransport.protocol.isProcessComplete()) {
+                			node.warn("Previous process hasn't finished yet");
+                			return;
+            			}
+				smTransport.process();
+			}
 		}
 	}
 	RED.nodes.registerType('smartmeter', SmartmeterNode);
