@@ -61,8 +61,8 @@ module.exports = function (RED) {
 				smTransport.process();
 				if (config.requestInterval < 0 ) {
 					smTransport = smartmeterObis.init(options, sendData);
+					firstRun = true;
 				}
-				firstRun = false;
 			});
 		}
 	}
