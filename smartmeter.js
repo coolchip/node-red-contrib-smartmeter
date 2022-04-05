@@ -54,7 +54,7 @@ module.exports = function (RED) {
                 			return;
             			}
 				smTransport.process();
-			}
+			});
 		}
 	}
 	RED.nodes.registerType('smartmeter', SmartmeterNode);
