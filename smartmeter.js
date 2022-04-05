@@ -42,9 +42,11 @@ module.exports = function (RED) {
 			}
 
 			var smTransport = smartmeterObis.init(options, sendData);
+			var firstRun = true;
 			
 			if (config.requestInterval >= 0 ) {
 				smTransport.process();
+				firstRun = false;
 			}
 
 			node.on('close', function () {
@@ -52,7 +54,7 @@ module.exports = function (RED) {
 			});
 			
 			node.on('input', function() {
-				if (!smTransport.protocol.isProcessComplete()) {
+				if (!firstRun && !smTransport.protocol.isProcessComplete()) {
                 			node.warn("Previous process hasn't finished yet");
                 			return;
             			}
@@ -60,6 +62,7 @@ module.exports = function (RED) {
 				if (config.requestInterval < 0 ) {
 					smTransport = smartmeterObis.init(options, sendData);
 				}
+				firstRun = false;
 			});
 		}
 	}
