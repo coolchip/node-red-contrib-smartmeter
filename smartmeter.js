@@ -41,10 +41,9 @@ module.exports = function (RED) {
 				node.send(msg);
 			}
 
-			var smTransport;
+			var smTransport = smartmeterObis.init(options, sendData);
 			
 			if (config.requestInterval >= 0 ) {
-				smTransport = smartmeterObis.init(options, sendData);
 				smTransport.process();
 			}
 
@@ -57,10 +56,10 @@ module.exports = function (RED) {
                 			node.warn("Previous process hasn't finished yet");
                 			return;
             			}
-				if (config.requestInterval == -1 ) {
+				smTransport.process();
+				if (config.requestInterval < 0 ) {
 					smTransport = smartmeterObis.init(options, sendData);
 				}
-				smTransport.process();
 			});
 		}
 	}
