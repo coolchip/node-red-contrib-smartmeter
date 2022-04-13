@@ -4,7 +4,7 @@
 
 #### Node-RED Node, that reads and parses the data from smartmeter devices. Supports for example Hager eHz Energy Meter, EMH Energy Meter, EFR SmartGridHub, Siemens 2WR5, Elster AS1440, Iskraemeco MT174, Itron EM214 Typ 720.
 
-This work depends on the smartmeter Module ([smartmeter@github](https://github.com/Apollon77/smartmeter-obis) and [smartmeter@npm](https://www.npmjs.com/package/smartmeter-obis)).
+This work depends on the great smartmeter Module ([smartmeter@github](https://github.com/Apollon77/smartmeter-obis) and [smartmeter@npm](https://www.npmjs.com/package/smartmeter-obis)).
 
 ### Install
 Just run
@@ -14,6 +14,7 @@ Just run
 
 ### How to use
 Connect your reader and configure the smartmeter node.
+An external trigger is only needed by some smartmeters.
 
 ### Example
 ```text
